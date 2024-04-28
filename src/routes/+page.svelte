@@ -1,2 +1,3 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="flex h-screen items-center justify-center bg-slate-700">
+  <h2 class="text-5xl font-extrabold text-blue-600">TailwindCSS Is Working!</h2>
+</div>
