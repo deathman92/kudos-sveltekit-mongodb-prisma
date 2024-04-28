@@ -43,7 +43,7 @@
   <input type="hidden" value={data.recipient.id} name="recipientId" />
   <div class="flex flex-col gap-y-2 md:flex-row md:gap-y-0">
     <div class="flex flex-col items-center gap-y-2 pr-8 text-center">
-      <UserCircle profile={data.recipient.profile} class="h-24 w-24" />
+      <UserCircle profile={data.recipient.profile} width={96} height={96} class="h-24 w-24" />
       <p class="text-blue-300">
         {data.recipient.profile.firstName}
         {data.recipient.profile.lastName}
