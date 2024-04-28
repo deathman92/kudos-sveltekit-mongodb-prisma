@@ -27,9 +27,10 @@ model User {
 }
 
 type Profile {
-  firstName  String
-  lastName   String
-  department Department? @default(MARKETING)
+  firstName      String
+  lastName       String
+  profilePicture String?
+  department     Department? @default(MARKETING)
 }
 
 enum Department {

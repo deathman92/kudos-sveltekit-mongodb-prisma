@@ -13,6 +13,10 @@ const config = {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter({
       runtime: 'nodejs20.x',
+      images: {
+        sizes: [56, 64, 80, 96],
+        domains: ['7zffbdozksom7o5z.public.blob.vercel-storage.com'],
+      },
     }),
   },
 }

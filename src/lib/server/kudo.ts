@@ -30,7 +30,6 @@ export function getFilteredKudos(
   sortFilter: Prisma.KudoOrderByWithRelationInput,
   whereFilter: Prisma.KudoWhereInput,
 ) {
-  console.log('getFilteredKudos')
   return prisma.kudo.findMany({
     select: {
       id: true,
@@ -51,7 +50,6 @@ export function getFilteredKudos(
 }
 
 export function getRecentKudos() {
-  console.log('getRecentKudos')
   return prisma.kudo.findMany({
     take: 3,
     orderBy: {

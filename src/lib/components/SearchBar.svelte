@@ -1,7 +1,19 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import { sortOptions } from '$lib/constants'
+  import type { Profile } from '@prisma/client'
   import SelectBox from './SelectBox.svelte'
+  import UserCircle from './UserCircle.svelte'
+
+  let { profile, onOpenProfile }: { profile: Profile; onOpenProfile: () => void } = $props()
+
+  let filter = $state($page.url.searchParams.get('filter'))
+  let sort = $state($page.url.searchParams.get('sort') || 'date')
+
+  $effect(() => {
+    filter = $page.url.searchParams.get('filter')
+    sort = $page.url.searchParams.get('sort') || 'date'
+  })
 </script>
 
 <form
@@ -14,6 +26,7 @@
       name="filter"
       class="w-full rounded-xl px-3 py-2"
       placeholder="Search a message or name"
+      bind:value={filter}
     />
     <svg
       class="-ml-8 h-4 w-4 fill-current text-gray-400"
@@ -29,6 +42,7 @@
     containerClass="w-40"
     name="sort"
     options={sortOptions}
+    bind:value={sort}
   />
   <button
     type="submit"
@@ -45,4 +59,11 @@
     </a>
   {/if}
   <div class="flex-1"></div>
+  <UserCircle
+    class="h-14 w-14 transition duration-300 ease-in-out hover:scale-110 hover:border-2 hover:border-yellow-300"
+    width={56}
+    height={56}
+    {profile}
+    onclick={onOpenProfile}
+  />
 </form>

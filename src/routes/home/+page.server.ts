@@ -58,5 +58,5 @@ export async function load(event) {
   const users = getOtherUsers(user.id).catch(() => [])
   const kudos = getFilteredKudos(user.id, sortOptions, textFilter).catch(() => [])
   const recentKudos = getRecentKudos().catch(() => [])
-  return { users, kudos, recentKudos }
+  return { user, users, kudos, recentKudos }
 }

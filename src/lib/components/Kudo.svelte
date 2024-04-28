@@ -12,7 +12,7 @@
   ]} relative w-full gap-x-2 rounded-xl p-4"
 >
   <div>
-    <UserCircle {profile} class="h-16 w-16" />
+    <UserCircle {profile} width={64} height={64} class="h-16 w-16" />
   </div>
   <div class="flex flex-col">
     <p

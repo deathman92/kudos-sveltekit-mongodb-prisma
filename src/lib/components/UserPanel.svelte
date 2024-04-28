@@ -12,6 +12,8 @@
   <div class="flex flex-1 flex-col gap-y-10 overflow-y-scroll py-4">
     {#each users as user (user.id)}
       <UserCircle
+        width={96}
+        height={96}
         profile={user.profile}
         class="mx-auto h-24 w-24 flex-shrink-0"
         onclick={() => onSelectUser(user.id)}
