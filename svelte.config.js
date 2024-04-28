@@ -14,7 +14,7 @@ const config = {
     adapter: adapter({
       runtime: 'nodejs20.x',
       images: {
-        sizes: [56, 64, 80, 96],
+        sizes: [56, 64, 80, 96, 56 * 2, 64 * 2, 80 * 2, 96 * 2],
         domains: ['7zffbdozksom7o5z.public.blob.vercel-storage.com'],
       },
     }),
