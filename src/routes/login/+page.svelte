@@ -1,6 +1,6 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
-  import FormField from '$lib/FormField.svelte'
+  import FormField from '$lib/components/FormField.svelte'
 
   let { form } = $props()
 

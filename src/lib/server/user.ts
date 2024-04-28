@@ -16,3 +16,21 @@ export async function createUser(user: RegisterForm) {
   })
   return { id: newUser.id, email: newUser.email }
 }
+
+export async function getOtherUsers(userId: string) {
+  console.log('getOtherUsers')
+  return await prisma.user.findMany({
+    where: {
+      id: { not: userId },
+    },
+    orderBy: {
+      profile: {
+        firstName: 'asc',
+      },
+    },
+  })
+}
+
+export async function getUserById(userId: string) {
+  return await prisma.user.findUnique({ where: { id: userId } })
+}

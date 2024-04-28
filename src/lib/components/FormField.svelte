@@ -7,7 +7,7 @@
     for: htmlFor,
     label,
     type = 'text',
-    value,
+    value = $bindable(),
     error = '',
     onchange,
     ...other
@@ -28,7 +28,7 @@
 <label for={htmlFor} class="font-semibold text-blue-600">{label}</label>
 <input
   onchange={onChange}
-  {value}
+  bind:value
   {type}
   id={htmlFor}
   name={htmlFor}
